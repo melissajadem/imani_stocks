@@ -1,6 +1,6 @@
 mod claude;
 mod routes;
-mod yahoo;
+mod stocks;
 
 use axum::Router;
 use std::net::SocketAddr;

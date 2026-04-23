@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Imani Stocks</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <header>
+                <h1>Imani Stocks 📈</h1>
+                <p>AI powered stock analysis</p>
+            </header>
+
+            <div class="search-box">
+                <input type="text" id="ticker" placeholder="Enter stock ticker e.g AAPL, TSLA, NVDA" />
+                <button onclick="analyzeStock()">Analyze</button>
+            </div>
+
+            <div id="loading" class="hidden">Analyzing stock...</div>
+
+            <div id="results" class="hidden">
+                <div class="stock-card">
+                    <h2 id="stock-symbol"></h2>
+                    <p id="stock-price"></p>
+                    <p id="stock-volume"></p>
+                </div>
+                <div class="analysis-card">
+                    <h3>Claude's Analysis</h3>
+                    <div id="stock-analysis"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="/js/dashboard.js"></script>
+    </body>
+
+</html>

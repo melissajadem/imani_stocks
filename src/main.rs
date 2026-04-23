@@ -4,13 +4,16 @@ mod yahoo;
 
 use axum::Router;
 use std::net::SocketAddr;
+use tower_http::services::ServeDir;
 
 #[tokio::main]
 async fn main() {
     dotenv::dotenv().ok();
     println!("Imani Stocks starting on http://localhost:3000");
 
-    let app = Router::new().merge(routes::create_routes());
+    let app = Router::new()
+        .merge(routes::create_routes())
+        .nest_service("/", ServeDir::new("frontend"));
 
     let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
 
